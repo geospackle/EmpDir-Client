@@ -1,0 +1,15 @@
+.employee-card {
+  width: 250px;
+  margin: 5px;
+  color: white;
+  /*padding: 10px;*/
+  text-align: center;
+  /*max-height: min-content;*/
+  /*display: block;*/
+  /*display:absolute;*/
+}
+
+.employee-card img {
+  width: 250px;
+  /*margin: auto;*/
+}

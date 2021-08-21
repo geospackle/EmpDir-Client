@@ -1,7 +1,12 @@
 import "./DashBoard.css";
+import EmployeeList from "./EmployeeList";
 
-function DashBoard() {
-  return <div className="dashboard"></div>;
-}
+const DashBoard = () => {
+  return (
+    <div className="dashboard">
+      <EmployeeList />
+    </div>
+  );
+};
 
 export default DashBoard;

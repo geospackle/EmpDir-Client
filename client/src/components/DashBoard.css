@@ -1,0 +1,7 @@
+.dashboard {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  margin: auto;
+  background-color: black;
+}

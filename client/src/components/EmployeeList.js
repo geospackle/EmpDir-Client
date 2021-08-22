@@ -2,26 +2,8 @@ import React, { useState, useEffect } from "react";
 import EmployeeCard from "./EmployeeCard";
 import "./EmployeeList.css";
 
-const EmployeeList = () => {
-  const [employees, setEmployees] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    console.log("mounted");
-    const url = "https://randomuser.me/api/?results=100";
-    fetch(url)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-          setEmployees(result.results);
-        },
-        (error) => {
-          setError(error);
-        }
-      );
-  }, []);
-
+const EmployeeList = (props) => {
+  const { employees, error } = props;
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!employees) {
@@ -31,7 +13,7 @@ const EmployeeList = () => {
     return (
       <div className="employeeList">
         {employees.map((employee) => {
-          return <EmployeeCard key={employee.id} employee={employee} />;
+          return <EmployeeCard key={employee.dob.date} employee={employee} />;
         })}
       </div>
     );

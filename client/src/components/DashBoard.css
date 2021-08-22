@@ -2,8 +2,7 @@
   position: relative;
   display: inline-block;
   justify-content: center;
-  margin: auto;
-  background-color: black;
   margin-left: 10%;
   margin-right: 10%;
+  min-width: 80%;
 }

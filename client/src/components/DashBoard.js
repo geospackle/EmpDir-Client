@@ -10,7 +10,6 @@ const DashBoard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("mounted");
     const url = process.env.EMPDIR_API_URL || "http://localhost:3100/employee";
     fetch(url)
       .then((res) => res.json())
@@ -37,7 +36,6 @@ const DashBoard = () => {
     if (searchTerm.length > 0) setFilteredEmployees(filteredFull);
     else {
       setFilteredEmployees(employees);
-      console.log(filteredEmployees);
     }
   }, [searchTerm]);
 

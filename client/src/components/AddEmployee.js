@@ -12,7 +12,6 @@ const AddEmployee = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    console.log(values);
     fetch(url, {
       method: "POST",
       headers: {

@@ -9,11 +9,10 @@ const EmployeeList = (props) => {
   } else if (!employees) {
     return <div>Loading...</div>;
   } else {
-    console.log(employees);
     return (
       <div className="employeeList">
         {employees.map((employee) => {
-          return <EmployeeCard key={employee.dob.date} employee={employee} />;
+          return <EmployeeCard key={employee.id} employee={employee} />;
         })}
       </div>
     );

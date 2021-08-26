@@ -11,13 +11,13 @@ const DashBoard = () => {
 
   useEffect(() => {
     console.log("mounted");
-    const url = "https://randomuser.me/api/?results=100";
+    const url = "http://localhost:3100/employee";
     fetch(url)
       .then((res) => res.json())
       .then(
         (result) => {
-          setEmployees(result.results);
-          setFilteredEmployees(result.results);
+          setEmployees(result);
+          setFilteredEmployees(result);
         },
         (error) => {
           setError(error);
@@ -28,14 +28,17 @@ const DashBoard = () => {
   useEffect(() => {
     const re = new RegExp(`^${searchTerm}`, "i");
     const filteredFirst = employees.filter((employee) =>
-      re.test(employee.name.first)
+      re.test(employee.first_name)
     );
     const filteredLast = employees.filter((employee) =>
-      re.test(employee.name.last)
+      re.test(employee.last_name)
     );
     const filteredFull = [...filteredFirst, ...filteredLast];
     if (searchTerm.length > 0) setFilteredEmployees(filteredFull);
-    else setFilteredEmployees(employees);
+    else {
+      setFilteredEmployees(employees);
+      console.log(filteredEmployees);
+    }
   }, [searchTerm]);
 
   return (

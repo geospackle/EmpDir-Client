@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "./AddEmployee.css";
 
-const url = "http://localhost:3100/employee";
+const url = process.env.EMPDIR_API_URL || "http://localhost:3100/employee";
 
 const AddEmployee = () => {
   const {
@@ -26,10 +26,10 @@ const AddEmployee = () => {
   return (
     <div className="add-employee">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label for="first_name">First Name</label>
+        <label htmlFor="first_name">First Name</label>
         <div className="input-group mb-3">
           <input
-            class="form-control"
+            className="form-control"
             name="first_name"
             autoComplete="off"
             {...register("first_name", {
@@ -38,10 +38,10 @@ const AddEmployee = () => {
           />
           {errors.first_name && errors.first_name.message}
         </div>
-        <label for="last_name">Last Name</label>
+        <label htmlFor="last_name">Last Name</label>
         <div className="input-group mb-3">
           <input
-            class="form-control"
+            className="form-control"
             name="last_name"
             autoComplete="off"
             {...register("last_name", {
@@ -50,10 +50,10 @@ const AddEmployee = () => {
           />
           {errors.last_name && errors.last_name.message}
         </div>
-        <label for="phone">Phone</label>
+        <label htmlFor="phone">Phone</label>
         <div className="input-group mb-3">
           <input
-            class="form-control"
+            className="form-control"
             name="phone"
             autoComplete="off"
             {...register("phone", {
@@ -62,10 +62,10 @@ const AddEmployee = () => {
           />
           {errors.phone && errors.phone.message}
         </div>
-        <label for="department">Department</label>
+        <label htmlFor="department">Department</label>
         <div className="input-group mb-3">
           <input
-            class="form-control"
+            className="form-control"
             name="department"
             autoComplete="off"
             {...register("department", {
@@ -74,10 +74,10 @@ const AddEmployee = () => {
           />
           {errors.department && errors.department.message}
         </div>
-        <label for="picture">Picture URL</label>
+        <label htmlFor="picture">Picture URL</label>
         <div className="input-group mb-3">
           <input
-            class="form-control"
+            className="form-control"
             name="picture"
             autoComplete="off"
             {...register("picture", {

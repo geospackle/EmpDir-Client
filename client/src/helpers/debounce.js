@@ -1,13 +1,10 @@
-const debounce = (cb, delay) => {
+const debounce = (func, delay) => {
   let timer;
-  return function (...args) {
-    if (timer) return;
-    cb(...args);
-    timer = true;
-    setTimeout(() => {
-      timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
     }, delay);
   };
 };
-
 export default debounce;

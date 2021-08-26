@@ -11,7 +11,7 @@ const DashBoard = () => {
 
   useEffect(() => {
     console.log("mounted");
-    const url = "http://localhost:3100/employee";
+    const url = process.env.EMPDIR_API_URL || "http://localhost:3100/employee";
     fetch(url)
       .then((res) => res.json())
       .then(

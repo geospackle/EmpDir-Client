@@ -13,7 +13,7 @@ const SearchBar = ({ passSearch }) => {
   const deb = useCallback(
     debounce((searchVal) => {
       passSearch(searchVal);
-    }, 1000),
+    }, 100),
     []
   );
 
